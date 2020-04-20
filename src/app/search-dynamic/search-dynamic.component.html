@@ -1,0 +1,100 @@
+<div class="container">
+<div class="row well">
+    
+    <form>
+
+        <div class="form-group ">
+            <label class="lead" for="scoreName">Enter Score</label>
+            <!-- <input type="name" class="form-control" id="inputName" placeholder="name"> -->
+            <!-- <input type="text" [(ngModel)]='collegeScores' [ngModelOptions]="{standalone: true}" class="form-control"
+                id="scoreName" /> -->
+
+        </div>
+        <button type="submit" (click)="getCollegesByScores()" class="btn-primary btn-sm">submit</button>
+
+    </form>
+</div>
+<div class="row well">
+    <div class="col-lg-2">
+
+    </div>
+    <div class="col-lg-8 " id="table-scroll">
+        <!-- <button type="submit" (click)="addColleges()" data-dismiss="modal" class="btn btn-primary">Query</button> -->
+        <div class="table-responsive" *ngFor="let college of colleges; let i = index">
+
+            <table class="highlight">
+                <thead>
+                    <tr>
+                        <th>categoryId</th>
+                        <th>categoryName</th>
+                        <th>resourceType</th>
+                        <th>collegeUrl</th>
+                        <th>collegeScores</th>
+                        <th>internationalStudentsRatio</th>
+                        <th>maleFemaleRatio</th>
+                        <th>collegeResearchGrants</th>
+                        <th>authorName</th>
+                        <th>contributorName</th>
+                        <th>contributorEmail</th>
+                        <th>contributorStoryLine</th>
+                        <th>collegeStanding</th>
+                        <th>collegeGPA</th>
+                        <th>collegeScholarships</th>
+                        <th>collegeCampusLife</th>
+                        <th>cityName</th>
+                        <th>stateName</th>
+                        <th>countryCode</th>
+                        <th>countryName </th>
+                        <th> resourceUploadedDate </th>
+                        <th> collegeLocation </th>
+                        <th>notes</th>
+                        <th>lastModifiedBy</th>
+                        <th>lastModifiedDate </th>
+                        <th>localCampusInfo</th>
+                        <th>alumniInfo </th>
+                        <th>prospectus </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>{{college.categoryId}}</td>
+                        <td>{{college.categoryName}}</td>
+                        <td>{{college.resourceType}}</td>
+                        <td>{{college.collegeUrl}}</td>
+                        <td>{{college.collegeScores}}</td>
+                        <td>{{college.internationalStudentsRatio}}</td>
+                        <td>{{college.maleFemaleRatio}}</td>
+                        <td>{{college.collegeResearchGrants}}</td>
+                        <td>{{college.autdorName}}</td>
+                        <td>{{college.contributorName}}</td>
+                        <td>{{college.contributorEmail}}</td>
+                        <td>{{college.contributorStoryLine}}</td>
+                        <td>{{college.collegeStanding}}</td>
+                        <td>{{college.collegeGPA}}</td>
+                        <td>{{college.collegeScholarships}}</td>
+                        <td>{{college.collegeCampusLife}}</td>
+                        <td>{{college.cityName}}</td>
+                        <td>{{college.stateName}}</td>
+                        <td>{{college.countryCode}}</td>
+                        <td>{{college.countryName}} </td>
+                        <td>{{college. resourceUploadedDate}} </td>
+                        <td> {{college.collegeLocation }}</td>
+                        <td>{{college.notes}}</td>
+                        <td>{{college.lastModifiedBy}}</td>
+                        <td>{{college.lastModifiedDate }}</td>
+                        <td>{{college.localCampusInfo}}</td>
+                        <td>{{college.alumniInfo }}</td>
+                        <td>{{college.prospectus }}</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+</div>
