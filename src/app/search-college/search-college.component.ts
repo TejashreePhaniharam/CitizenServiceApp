@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StudentServiceService } from '../student-service.service';
 import { Colleges} from '../search-college/Colleges';
+import { Injectable, AfterViewInit, ViewChild } from '@angular/core';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import {MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'app-search-college',
@@ -12,12 +17,53 @@ import { Colleges} from '../search-college/Colleges';
 export class SearchCollegeComponent implements OnInit {
  colleges1:Colleges[];
  colleges:Colleges[];
+
+ datasource;
+  tableColumns  :  string[] = ['categoryName','collegeScores','collegeUrl', 'collegeScholarships', 'countryName', 'notes', 'cityName', 'update', 'add'];
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatTable,{static:true}) table: MatTable<any>;
+
+
   constructor(private route:ActivatedRoute,
     private studentservice:StudentServiceService){
   }
   ngOnInit(): void {
    
   }
+  public doFilter = (value: string) => {
+    this.datasource.filter = value.trim().toLocaleLowerCase();
+  }
+
+  ngAfterViewInit(): void
+  {
+    this.studentservice.getColleges().subscribe(data => {
+      this.datasource = new MatTableDataSource(data);
+      if (this.sort) // check it is defined.
+      {
+          this.datasource.sort = this.sort;
+          this.datasource.paginator = this.paginator;
+      }
+    });
+  }
+
+  public redirectToDetails = (id: string) => {
+    
+  }
+ 
+  public redirectToUpdate = (id: string) => {
+    
+  }
+ 
+  public redirectToDelete = (id: string) => {
+    
+  }
+  public pageChanged = (id: string) => {
+    
+  }
+  
+
+
 
 addColleges()
 {
