@@ -19,7 +19,7 @@ export class SearchCollegeComponent implements OnInit {
  colleges:Colleges[];
 
  datasource;
-  tableColumns  :  string[] = ['categoryName','collegeScores','collegeUrl', 'collegeScholarships', 'countryName', 'notes', 'cityName', 'update', 'add'];
+  tableColumns  :  string[] = ['categoryName','collegeScores','collegeUrl', 'collegeScholarships', 'countryName', 'notes', 'details', 'update', 'add'];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
@@ -55,7 +55,7 @@ export class SearchCollegeComponent implements OnInit {
     
   }
  
-  public redirectToDelete = (id: string) => {
+  public redirectToAdd = (id: string) => {
     
   }
   public pageChanged = (id: string) => {
