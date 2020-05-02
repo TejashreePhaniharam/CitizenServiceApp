@@ -18,7 +18,9 @@ export class SearchRatioComponent implements OnInit {
    ngOnInit(): void {
     
    }
- 
+   loopForUrls(){
+    
+  }
  addColleges()
  {
    if (this.colleges==null){
