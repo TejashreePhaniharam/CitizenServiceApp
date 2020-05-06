@@ -127,16 +127,22 @@
               <mat-card-title>Search By Score</mat-card-title>
               <mat-card-subtitle>Your Score Here</mat-card-subtitle>
             </mat-card-header>
+ <!-- <input type="text" [(ngModel)]='contributorName' [ngModelOptions]="{standalone: true}"  class="form-control" id="inputName"  /> -->
 
             <mat-card-content>
 
               <mat-form-field>
-                <input matInput placeholder="Category Name" [(ngModel)]="categoryName">
+                <input matInput placeholder="countryName" [(ngModel)]="countryName">
               </mat-form-field> 
+              <mat-form-field>
+                <input matInput placeholder="collegeScores" [(ngModel)]="collegeScores">
+
+              </mat-form-field> 
+
             </mat-card-content>
             <mat-card-actions>
-              <button mat-button>LIKE</button>
-              <button mat-button>SHARE</button>
+              <button mat-button (click)= "getByCountryNameCollegeScores(countryName, collegeScores)">submit </button>
+              <button mat-button>cancel</button>
             </mat-card-actions>
           </mat-card>
         </div>

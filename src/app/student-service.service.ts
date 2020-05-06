@@ -14,6 +14,7 @@ export class StudentServiceService {
   private addCollegeUrl = "http://localhost:8081/";
   private updateCollegeUrl = "http://localhost:8081/";
   private deleteCollegeUrl = "http://localhost:8081/";
+  private countryNameCollegeScoresUrl = "http://localhost:8081/colleges/scores";
    colleges: Colleges[];
   constructor(private _http:Http) {
   
@@ -50,6 +51,21 @@ export class StudentServiceService {
                       catchError(this.handleError('colleges',[]))
                       );
     }
+    public getByCountryNameCollegeScores(countryName:string, collegeScores:Number): Observable<Colleges[]>{
+      console.log("actual service call :  "+countryName);
+      console.log("hello babu:  "+collegeScores);
+      var sam = this.countryNameCollegeScoresUrl + "/"+ countryName + "/" + collegeScores;
+      console.log("actaul url:  "+sam);
+      console.log("in service call of cntry and scores"+this.countryNameCollegeScoresUrl)
+      return this._http.get(this.countryNameCollegeScoresUrl)
+                       .pipe(
+                         map(college => this.colleges = college.json()
+                       ),
+                       catchError(this.handleError('getCertifications',[]))
+                       );
+      
+      }
+
 
     private handleError<T>(operation = 'operation', result?:T){
       return (error:any): Observable<T> =>{

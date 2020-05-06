@@ -17,7 +17,7 @@ export class SearchDynamicComponent implements OnInit {
   categoryName: string;
   resourceType: string;  //website, video, twitter #hashtag
   collegeUrl: string;
-  collegeScores: string;
+  collegeScores: Number;
   internationalStudentsRatio: string;
   maleFemaleRatio: string;
   collegeResearchGrants: string; //high, average, low
@@ -58,6 +58,16 @@ export class SearchDynamicComponent implements OnInit {
 
      this.studentservice.getColleges()
      .subscribe((collegeData)=>this.colleges = collegeData);
+
+ }
+
+ getByCountryNameCollegeScores(countryName:string, collegeScores:Number)
+ {
+console.log("hello babu:  "+countryName);
+console.log("hello babu:  "+collegeScores);
+     this.studentservice.getByCountryNameCollegeScores(countryName, collegeScores)
+     .subscribe((collegeData)=>this.colleges = collegeData);
+     console.log("hello length:  "+this.colleges.length);
 
  }
 }
