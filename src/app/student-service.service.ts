@@ -57,7 +57,7 @@ export class StudentServiceService {
       var sam = this.countryNameCollegeScoresUrl + "/"+ countryName + "/" + collegeScores;
       console.log("actaul url:  "+sam);
       console.log("in service call of cntry and scores"+this.countryNameCollegeScoresUrl)
-      return this._http.get(this.countryNameCollegeScoresUrl)
+      return this._http.get(sam)
                        .pipe(
                          map(college => this.colleges = college.json()
                        ),
