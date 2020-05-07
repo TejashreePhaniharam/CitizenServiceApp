@@ -52,12 +52,10 @@ export class StudentServiceService {
                       );
     }
     public getByCountryNameCollegeScores(countryName:string, collegeScores:Number): Observable<Colleges[]>{
-      console.log("actual service call :  "+countryName);
-      console.log("hello babu:  "+collegeScores);
-      var sam = this.countryNameCollegeScoresUrl + "/"+ countryName + "/" + collegeScores;
-      console.log("actaul url:  "+sam);
-      console.log("in service call of cntry and scores"+this.countryNameCollegeScoresUrl)
-      return this._http.get(sam)
+
+      var collgescores = this.countryNameCollegeScoresUrl + "/"+ countryName + "/" + collegeScores;
+
+      return this._http.get(collgescores)
                        .pipe(
                          map(college => this.colleges = college.json()
                        ),

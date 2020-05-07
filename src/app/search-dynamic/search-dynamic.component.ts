@@ -20,8 +20,8 @@ export class SearchDynamicComponent implements OnInit {
   colleges1:Colleges[];
   colleges:Colleges[];
   scoresBycountry:Colleges[];
-  tableColumns  :  string[] = ['_id','categoryName','collegeScores','collegeUrl', 'collegeScholarships', 'countryName', 'internationalStudentsRatio'];
-  datasource1;
+  tableColumns  :  string[] = ['categoryName','collegeScores','collegeUrl', 'collegeScholarships', 'countryName', 'internationalStudentsRatio'];
+  datasource;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
@@ -55,6 +55,8 @@ export class SearchDynamicComponent implements OnInit {
   localCampusInfo: string;    //categoryPage news
   alumniInfo: string;   //categoryPage pictures
   prospectus: string;// subCategoryPage pictures
+
+  clicked:boolean=true;
    constructor(private route:ActivatedRoute,
      private studentservice:StudentServiceService){
       this.colleges1= this.colleges
@@ -84,32 +86,30 @@ export class SearchDynamicComponent implements OnInit {
  getByCountryNameCollegeScores(countryName:string, collegeScores:Number)
  {
 
-
   this.studentservice.getByCountryNameCollegeScores(countryName, collegeScores).subscribe(data => {
-    this.datasource1 = new MatTableDataSource(data);
+    this.datasource = new MatTableDataSource(data);
     if (this.sort) // check it is defined.
     {
-        this.datasource1.sort = this.sort;
-        this.datasource1.paginator = this.paginator;
+        this.datasource.sort = this.sort;
+        this.datasource.paginator = this.paginator;
     }
   });
 
-
-
-// console.log("hello babu:  "+countryName);
-// console.log("hello babu:  "+collegeScores);
-//      this.studentservice.getByCountryNameCollegeScores(countryName, collegeScores)
-//      .subscribe((collegeData)=>this.scoresBycountry = collegeData);
-//      this.datasource1 = new MatTableDataSource(this.scoresBycountry);
-//      if (this.datasource1 == null){
-//           console.log("scores are empty");
-//      }
-//      if (this.sort) // check it is defined.
-//      {
-//          this.datasource1.sort = this.sort;
-//          this.datasource1.paginator = this.paginator;
-//      }
-
-//  }
  }
+
+
+ getByCountryNameCollegeStanding(countryName:string, collegeScores:Number)
+ {
+
+  this.studentservice.getByCountryNameCollegeScores(countryName, collegeScores).subscribe(data => {
+    this.datasource = new MatTableDataSource(data);
+    if (this.sort) // check it is defined.
+    {
+        this.datasource.sort = this.sort;
+        this.datasource.paginator = this.paginator;
+    }
+  });
+
+ }
+
 }
