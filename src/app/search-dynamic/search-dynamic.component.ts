@@ -98,10 +98,24 @@ export class SearchDynamicComponent implements OnInit {
  }
 
 
- getByCountryNameCollegeStanding(countryName:string, collegeScores:Number)
+ getByCountryNameCollegeScholarships(countryName:string, collegeScholarships:string)
  {
 
-  this.studentservice.getByCountryNameCollegeScores(countryName, collegeScores).subscribe(data => {
+  this.studentservice.getByCountryNameCollegeScholarships(countryName,collegeScholarships ).subscribe(data => {
+    this.datasource = new MatTableDataSource(data);
+    if (this.sort) // check it is defined.
+    {
+        this.datasource.sort = this.sort;
+        this.datasource.paginator = this.paginator;
+    }
+  });
+}
+
+
+  getByCountryNameCollegeStanding(countryName:string, collegeStanding:string)
+ {
+
+  this.studentservice.getByCountryNameCollegeStanding(countryName,collegeStanding ).subscribe(data => {
     this.datasource = new MatTableDataSource(data);
     if (this.sort) // check it is defined.
     {
