@@ -4,6 +4,9 @@ export class Colleges {
   categoryName: string;
   resourceType: string;  //website, video, twitter #hashtag
   collegeUrl: string;
+  collegeName : string;  //added newly
+  collegeCost : string; //added newly
+  collegeFacts : string; //added newly
   collegeScores: Number;
   internationalStudentsRatio: string;
   maleFemaleRatio: string;

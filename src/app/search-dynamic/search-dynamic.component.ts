@@ -31,6 +31,9 @@ export class SearchDynamicComponent implements OnInit {
   categoryName: string;
   resourceType: string;  //website, video, twitter #hashtag
   collegeUrl: string;
+  collegeName: string;
+  collegeCost: string;
+  collegeFacts: string;
   collegeScores: Number;
   internationalStudentsRatio: string;
   maleFemaleRatio: string;

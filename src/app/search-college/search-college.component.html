@@ -37,6 +37,21 @@
                 <th mat-header-cell *matHeaderCellDef mat-sort-header>College URL</th>
                 <td mat-cell *matCellDef="let element">{{element.resourceUrl}}</td>
             </ng-container>
+
+            <ng-container matColumnDef="collegeName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>College Name</th>
+                <td mat-cell *matCellDef="let element">{{element.resourceUrl}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="collegeCost">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>College Cost</th>
+                <td mat-cell *matCellDef="let element">{{element.resourceUrl}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="collegeFacts">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>College Facts</th>
+                <td mat-cell *matCellDef="let element">{{element.resourceUrl}}</td>
+            </ng-container>
             <ng-container matColumnDef="collegeScholarships">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header>College Scholarships</th>
                 <td mat-cell *matCellDef="let element">{{element.collegeScholarships}}</td>

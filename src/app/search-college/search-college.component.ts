@@ -35,6 +35,9 @@ export class SearchCollegeComponent implements OnInit {
   categoryName: string;
   resourceType: string;  //website, video, twitter #hashtag
   collegeUrl: string;
+  collegeName: string;
+  collegeCost: string;
+  collegeFacts: string;
   collegeScores: string;
   internationalStudentsRatio: string;
   maleFemaleRatio: string;
