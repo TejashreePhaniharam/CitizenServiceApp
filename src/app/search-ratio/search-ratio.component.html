@@ -2,9 +2,19 @@
 
     <div class="row">
         <div class="col-lg-2">
-            <div>
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Search By Your Choice</mat-card-title>
+                  <mat-card-subtitle>Are you specifically searching for something ? Find the college of your criteria! </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-actions>
+                  <button mat-button routerLink="/searchByRatio/searchDynamic" routerLinkActive="active">Let's Go!!</button>
+                </mat-card-actions>
+              </mat-card>
+            <!-- <div>
                  <button type="button" class="btn btn-success" routerLink="/searchByRatio/searchDynamic" routerLinkActive="active">click here to search</button>
-            </div>
+            </div> -->
         </div>
         <div class="col-lg-8 " id="table-scroll">
             <button type="submit" (click)="addColleges()" data-dismiss="modal" class="btn btn-primary">Query</button>

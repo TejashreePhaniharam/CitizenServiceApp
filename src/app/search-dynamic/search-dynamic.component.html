@@ -66,17 +66,13 @@
     </div>
   </div>
 
-
+<!--'categoryName','collegeScores','collegeUrl', 'collegeScholarships', 'countryName', 'internationalStudentsRatio','collegeCampusLife','collegeName','collegeGPA'-->
   <div class="row well" *ngIf="datasource">
     <table class="table-responsive" mat-table [dataSource]="datasource" class="mat-elevation-z8" matSort>
-
-
       <ng-container matColumnDef="categoryName">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Category Name</th>
         <td mat-cell *matCellDef="let element">{{element.categoryName}}</td>
       </ng-container>
-
-
       <ng-container matColumnDef="collegeScores">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>College Scores</th>
         <td *matCellDef="let element">{{element.collegeScores}}</td>
@@ -85,20 +81,6 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>College URL</th>
         <td mat-cell *matCellDef="let element">{{element.resourceUrl}}</td>
       </ng-container>
-      <ng-container matColumnDef="collegeName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>College Name</th>
-        <td mat-cell *matCellDef="let element">{{element.resourceUrl}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="collegeCost">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>College Cost</th>
-        <td mat-cell *matCellDef="let element">{{element.resourceUrl}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="collegeFacts">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>College Facts</th>
-        <td mat-cell *matCellDef="let element">{{element.resourceUrl}}</td>
-    </ng-container>
       <ng-container matColumnDef="collegeScholarships">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>College Scholarships</th>
         <td mat-cell *matCellDef="let element">{{element.collegeScholarships}}</td>
@@ -111,7 +93,20 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Ratio</th>
         <td mat-cell *matCellDef="let element">{{element.internationalStudentsRatio}}</td>
       </ng-container>
-
+      <ng-container matColumnDef="collegeCampusLife">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Campus Life</th>
+        <td mat-cell *matCellDef="let element">{{element.collegeCampusLife}}</td>
+      </ng-container>
+      <ng-container matColumnDef="collegeName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>College Name</th>
+        <td mat-cell *matCellDef="let element">{{element.collegeName}}</td>
+      </ng-container>
+      <ng-container matColumnDef="collegeGPA">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>College GPA</th>
+        <td mat-cell *matCellDef="let element">{{element.collegeGPA}}</td>
+      </ng-container>
+  
+  
 
       <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
@@ -126,7 +121,7 @@
     </div>
   </div>
 
-
+<!--tips 1-->
   <div class="row well">
     <div class="col-lg-12" *ngIf="clicked">
       <mat-card >
@@ -155,73 +150,25 @@
       </mat-card>
     </div>
   </div>
-
-
-
-  <div class="row well" *ngIf="datasource">
-    <table class="table-responsive" mat-table [dataSource]="datasource" class="mat-elevation-z8" matSort>
-
-
-      <ng-container matColumnDef="categoryName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Category Name</th>
-        <td mat-cell *matCellDef="let element">{{element.categoryName}}</td>
-      </ng-container>
-
-
-      <ng-container matColumnDef="collegeScores">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>College Scores</th>
-        <td *matCellDef="let element">{{element.collegeScores}}</td>
-      </ng-container>
-      <ng-container matColumnDef="collegeUrl">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>College URL</th>
-        <td mat-cell *matCellDef="let element">{{element.resourceUrl}}</td>
-      </ng-container>
-      <ng-container matColumnDef="collegeScholarships">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>College Scholarships</th>
-        <td mat-cell *matCellDef="let element">{{element.collegeScholarships}}</td>
-      </ng-container>
-      <ng-container matColumnDef="countryName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Country Name</th>
-        <td mat-cell *matCellDef="let element">{{element.countryName}}</td>
-      </ng-container>
-      <ng-container matColumnDef="internationalStudentsRatio">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ratio</th>
-        <td mat-cell *matCellDef="let element">{{element.internationalStudentsRatio}}</td>
-      </ng-container>
-
-
-      <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
-
-      <br>
-      <br>
-    </table>
-
-    <div>
-      <mat-paginator [pageSize]="2" [pageSizeOptions]="[2, 4, 6, 10, 20]" (page)="pageChanged($event)">
-      </mat-paginator>
-    </div>
-  </div>
-
-
+<!--2 row of cards-->
   <div class="row well">
     <div class="col-lg-4" *ngIf="clicked">
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Search By CollegeStanding</mat-card-title>
-          <mat-card-subtitle>CollegeStanding</mat-card-subtitle>
+          <mat-card-title>Search By CollegeCampusLife</mat-card-title>
+          <mat-card-subtitle>CollegeCampusLife</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <mat-form-field>
             <input matInput placeholder="countryName" [(ngModel)]="countryName">
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="collegeStanding" [(ngModel)]="collegeStanding">
+            <input matInput placeholder="campus life" [(ngModel)]="collegeCampusLife">
           </mat-form-field>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="getByCountryNameCollegeStanding(countryName, collegeStanding)">submit </button>
+          <button mat-button (click)="getByCountryNameCollegeCampusLife(countryName, collegeCampusLife)">submit </button>
           <button mat-button>cancel</button>
         </mat-card-actions>
       </mat-card>
@@ -230,19 +177,19 @@
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Search By Score</mat-card-title>
-          <mat-card-subtitle>Your Score Here</mat-card-subtitle>
+          <mat-card-title>Search By country</mat-card-title>
+          <mat-card-subtitle>Country</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <mat-form-field>
             <input matInput placeholder="countryName" [(ngModel)]="countryName">
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="collegeScores" [(ngModel)]="collegeScores">
+            <input matInput placeholder="college Name" [(ngModel)]="collegeName">
           </mat-form-field>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="getByCountryNameCollegeScores(countryName, collegeScores)">submit </button>
+          <button mat-button (click)="getByCountryNameCollegeName(countryName, collegeName)">submit </button>
           <button mat-button>cancel</button>
         </mat-card-actions>
       </mat-card>
@@ -251,21 +198,108 @@
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Search By Scholarships</mat-card-title>
-          <mat-card-subtitle>Scholarships</mat-card-subtitle>
+          <mat-card-title>Search By GPA</mat-card-title>
+          <mat-card-subtitle>GPA here</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <mat-form-field>
             <input matInput placeholder="countryName" [(ngModel)]="countryName">
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="Scholarships" [(ngModel)]="collegeScholarships">
+            <input matInput placeholder="GPA" [(ngModel)]="collegeGPA">
           </mat-form-field>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="getByCountryNameCollegeScholarships(countryName, collegeScholarships)">submit </button>
+          <button mat-button (click)="getByCountryNameCollegeGPA(countryName, collegeGPA)">submit </button>
           <button mat-button>cancel</button>
         </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  
+<!--second row of queries -->
+<div class="row well" *ngIf="datasource">
+  <table class="table-responsive" mat-table [dataSource]="datasource" class="mat-elevation-z8" matSort>
+
+
+    <ng-container matColumnDef="categoryName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Category Name</th>
+      <td mat-cell *matCellDef="let element">{{element.categoryName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="collegeScores">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>College Scores</th>
+      <td *matCellDef="let element">{{element.collegeScores}}</td>
+    </ng-container>
+    <ng-container matColumnDef="collegeUrl">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>College URL</th>
+      <td mat-cell *matCellDef="let element">{{element.resourceUrl}}</td>
+    </ng-container>
+    <ng-container matColumnDef="collegeScholarships">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>College Scholarships</th>
+      <td mat-cell *matCellDef="let element">{{element.collegeScholarships}}</td>
+    </ng-container>
+    <ng-container matColumnDef="countryName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Country Name</th>
+      <td mat-cell *matCellDef="let element">{{element.countryName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="internationalStudentsRatio">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ratio</th>
+      <td mat-cell *matCellDef="let element">{{element.internationalStudentsRatio}}</td>
+    </ng-container>
+    <ng-container matColumnDef="collegeCampusLife">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Campus Life</th>
+      <td mat-cell *matCellDef="let element">{{element.collegeCampusLife}}</td>
+    </ng-container>
+    <ng-container matColumnDef="collegeName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>College Name</th>
+      <td mat-cell *matCellDef="let element">{{element.collegeName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="collegeGPA">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>College GPA</th>
+      <td mat-cell *matCellDef="let element">{{element.collegeGPA}}</td>
+    </ng-container>
+
+
+
+
+    <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
+
+    <br>
+    <br>
+  </table>
+
+  <div>
+    <mat-paginator [pageSize]="2" [pageSizeOptions]="[2, 4, 6, 10, 20]" (page)="pageChanged($event)">
+    </mat-paginator>
+  </div>
+</div>
+<!--tips 2-->
+  <div class="row well">
+    <div class="col-lg-12" *ngIf="clicked">
+      <mat-card >
+        <mat-card-header class="dynamic-card-tips">
+          <div mat-card-avatar ></div>
+          <mat-card-title>Tips</mat-card-title>
+          <mat-card-subtitle>
+
+            <div>
+              No blame games anymore please and leave selfishness, we are an interdependent group of countries, 
+              immature planning of any country will lead a bubble effect on everyone, better to be open minded and compliant. Utilately everyone will pay the price. 
+              lets cleanup our planet, for our children..grandchildren, and their children. We have to roll up our sleves and movitate
+              people around us. We can bring change, lets groom our children as effective leaders, most importantly political leaders. We cant leave our 
+              faith in the hands of few fools. Children need train them to have, hands on skills, need to have awareness of our history,
+              to be motivated from past and present historians philosopheres leaders scientists ngos, 
+              we need to impart knowledge on how tackle the climate change and make our planet a better place to live forever.
+              We may conquer distance plants in years to come, but our blue print as a sunstainable and responsible humans should be the cornerstone of every human being.
+            </div>
+          </mat-card-subtitle>
+
+
+      </mat-card-header>
+      <mat-card-content>
+
+      </mat-card-content>
       </mat-card>
     </div>
   </div>

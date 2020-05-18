@@ -20,8 +20,8 @@ export class SearchDynamicComponent implements OnInit {
   colleges1:Colleges[];
   colleges:Colleges[];
   scoresBycountry:Colleges[];
-  tableColumns  :  string[] = ['categoryName','collegeScores','collegeUrl', 'collegeScholarships', 'countryName', 'internationalStudentsRatio'];
-  datasource;
+  tableColumns  :  string[] = ['categoryName','collegeScores','collegeUrl', 'collegeScholarships', 'countryName', 'internationalStudentsRatio','collegeCampusLife','collegeName','collegeGPA'];
+  datasource: any;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
@@ -119,6 +119,48 @@ export class SearchDynamicComponent implements OnInit {
  {
 
   this.studentservice.getByCountryNameCollegeStanding(countryName,collegeStanding ).subscribe(data => {
+    this.datasource = new MatTableDataSource(data);
+    if (this.sort) // check it is defined.
+    {
+        this.datasource.sort = this.sort;
+        this.datasource.paginator = this.paginator;
+    }
+  });
+
+ }
+
+ getByCountryNameCollegeCampusLife(countryName:string, collegeCampusLife:string)
+ {
+
+  this.studentservice.getByCountryNameCollegeCampusLife(countryName,collegeCampusLife).subscribe(data => {
+    this.datasource = new MatTableDataSource(data);
+    if (this.sort) // check it is defined.
+    {
+        this.datasource.sort = this.sort;
+        this.datasource.paginator = this.paginator;
+    }
+  });
+
+ }
+
+ getByCountryNameCollegeName(countryName:string, collegeName:string)
+ {
+
+  this.studentservice.getByCountryNameCollegeName(countryName,collegeName).subscribe(data => {
+    this.datasource = new MatTableDataSource(data);
+    if (this.sort) // check it is defined.
+    {
+        this.datasource.sort = this.sort;
+        this.datasource.paginator = this.paginator;
+    }
+  });
+
+ }
+
+ getByCountryNameCollegeGPA(countryName:string, collegeGPA:string)
+ {
+
+  this.studentservice.getByCountryNameCollegeGPA(countryName,collegeGPA).subscribe(data => {
     this.datasource = new MatTableDataSource(data);
     if (this.sort) // check it is defined.
     {

@@ -17,6 +17,9 @@ export class StudentServiceService {
   private countryNameCollegeScoresUrl = "http://localhost:8081/colleges/scores";
   private countryNameCollegeScholarshipsUrl = "http://localhost:8081/colleges/funding";
   private countryNameCollegeStandingUrl = "http://localhost:8081/colleges/standing";
+  private countryNameCollegeCampusLifeUrl = "http://localhost:8081/colleges/campuslife";
+  private countryNameCollegeNameUrl = "http://localhost:8081/colleges/clgname";
+  private countryNameCollegeGPAUrl = "http://localhost:8081/colleges/gpa";
    colleges: Colleges[];
   constructor(private _http:Http) {
   
@@ -92,6 +95,46 @@ export class StudentServiceService {
                            );
           
           }
+
+          public getByCountryNameCollegeCampusLife(countryName:string, collegeCampusLife:string): Observable<Colleges[]>{
+            console.log("country"+countryName)
+            console.log("campusLife"+collegeCampusLife)
+            var collgesCampusLife = this.countryNameCollegeCampusLifeUrl + "/"+ countryName + "/" + collegeCampusLife;
+            console.log("campusLife"+collgesCampusLife)
+            return this._http.get(collgesCampusLife)
+                             .pipe(
+                               map(college => this.colleges = college.json()
+                             ),
+                             catchError(this.handleError('getCertifications',[]))
+                             );
+            
+            }
+
+            public getByCountryNameCollegeName(countryName:string, collegeName:string): Observable<Colleges[]>{
+
+              var collgesName = this.countryNameCollegeNameUrl + "/"+ countryName + "/" + collegeName;
+        
+              return this._http.get(collgesName)
+                               .pipe(
+                                 map(college => this.colleges = college.json()
+                               ),
+                               catchError(this.handleError('getCertifications',[]))
+                               );
+              
+              }
+
+              public getByCountryNameCollegeGPA(countryName:string, collegeGPA:string): Observable<Colleges[]>{
+
+                var collgesGPA = this.countryNameCollegeGPAUrl + "/"+ countryName + "/" + collegeGPA;
+          
+                return this._http.get(collgesGPA)
+                                 .pipe(
+                                   map(college => this.colleges = college.json()
+                                 ),
+                                 catchError(this.handleError('getCertifications',[]))
+                                 );
+                
+                }
 
     private handleError<T>(operation = 'operation', result?:T){
       return (error:any): Observable<T> =>{
