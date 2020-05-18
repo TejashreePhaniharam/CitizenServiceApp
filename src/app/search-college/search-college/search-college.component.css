@@ -1,0 +1,31 @@
+.demo-content
+{
+     padding: 10px; 
+    font-size: 25px; 
+    height:420px;
+     background: #dbdfe5; 
+     margin-bottom: 15px; 
+    }
+      .demo-content.bg-alt
+      {
+           background: #abb1b8; 
+      }
+      
+    
+        #table-scroll {
+            height:420px;
+            overflow:auto;  
+            
+        }
+
+        
+      tbody
+      {
+
+       overflow: scroll;
+      }
+
+      .mat-button, .mat-raised-button{
+        background-color:red;
+
+    } 
