@@ -12,10 +12,12 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchRatioComponent implements OnInit {
   colleges1:Colleges[];
   colleges:Colleges[];
+  collegeVideos:Colleges[];
    constructor(private route:ActivatedRoute,
      private studentservice:StudentServiceService){
    }
    ngOnInit(): void {
+    this.getByCountryNameResourceType("India","video");
     
    }
    loopForUrls(){
@@ -33,4 +35,11 @@ export class SearchRatioComponent implements OnInit {
      this.colleges1=this.colleges1;
    }
  }
+ getByCountryNameResourceType(countryName:string,resourseType:string)
+ {
+  this.studentservice.getByCountryNameResourceType(countryName,resourseType)
+  .subscribe((collegeData)=>this.collegeVideos = collegeData);
+ }
+
+
 }

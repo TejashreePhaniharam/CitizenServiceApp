@@ -20,6 +20,7 @@ export class StudentServiceService {
   private countryNameCollegeCampusLifeUrl = "http://localhost:8081/colleges/campuslife";
   private countryNameCollegeNameUrl = "http://localhost:8081/colleges/clgname";
   private countryNameCollegeGPAUrl = "http://localhost:8081/colleges/gpa";
+  private countryNameresorceTypeUrl = "http://localhost:8081/colleges/resources";
    colleges: Colleges[];
   constructor(private _http:Http) {
   
@@ -135,6 +136,23 @@ export class StudentServiceService {
                                  );
                 
                 }
+
+
+                getByCountryNameResourceType(countryName:string,resourceType:string): Observable<Colleges[]>{   
+                  var resourceTypeUrl=this.countryNameresorceTypeUrl+ "/"  + countryName +  "/" + resourceType;
+                  console.log("came here"+resourceTypeUrl);
+            
+                  return this._http.get(resourceTypeUrl)
+                  .pipe(
+                    map(college => this.colleges = college.json()
+                    ),
+                  catchError(this.handleError('popularityStories',[]))
+                  );
+            
+                } 
+            
+
+
 
     private handleError<T>(operation = 'operation', result?:T){
       return (error:any): Observable<T> =>{
