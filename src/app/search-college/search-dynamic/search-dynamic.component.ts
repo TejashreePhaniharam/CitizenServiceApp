@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StudentServiceService } from '../student-service.service';
+import { StudentServiceService } from '../../student-service.service';
 import { Colleges } from '../search-college/Colleges';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -8,7 +8,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import {MatTable } from '@angular/material/table';
 import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { AddDailogComponent } from '../add-dailog/add-dailog.component';
+import { AddDailogComponent } from '../../add-dailog/add-dailog.component';
 
 @Component({
   selector: 'app-search-dynamic',

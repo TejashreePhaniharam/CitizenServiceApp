@@ -24,7 +24,7 @@ export class SearchRatioComponent implements OnInit {
    }
    
    ngOnInit(): void {
-     this.getByCountryNameResourceType("India","video");
+     this.getByCountryNameResourceType("india","video");
    }
    loopForUrls(){
     
