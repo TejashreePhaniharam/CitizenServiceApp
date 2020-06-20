@@ -24,13 +24,15 @@ import { MatCardModule } from '@angular/material/card';
 import { AddDailogComponent } from './add-dailog/add-dailog.component';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { TrainingsComponent } from './trainings/trainings.component';
+import { JobsComponent } from './jobs/jobs.component';
 
 
 const routes: Routes = [
   { path: "searchcolleges", component: SearchCollegeComponent },
   { path: "searchByRatio", component: SearchRatioComponent },
   { path: "searchByRatio/searchDynamic", component: SearchDynamicComponent },
-  { path: "trainings", component: TrainingsComponent }
+  { path: "trainings", component: TrainingsComponent },
+  { path: "jobs", component: JobsComponent },
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const routes: Routes = [
     SearchDynamicComponent,
     AddDailogComponent,
     DialogBoxComponent,
-    TrainingsComponent
+    TrainingsComponent,
+    JobsComponent
   ],
   imports: [
     BrowserModule,

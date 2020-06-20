@@ -20,7 +20,7 @@ export class SearchDynamicComponent implements OnInit {
   colleges1:Colleges[];
   colleges:Colleges[];
   scoresBycountry:Colleges[];
-  tableColumns  :  string[] = ['categoryName','collegeScores','collegeUrl', 'collegeScholarships', 'countryName', 'internationalStudentsRatio','collegeCampusLife','collegeName','collegeGPA'];
+  tableColumns  :  string[] = ['categoryName','collegeScores','collegeUrl', 'collegeScholarships', 'countryName', 'internationalStudentsRatio','collegeCampusLife','collegeName','collegeGPA','collegeStanding'];
   datasource: any;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
