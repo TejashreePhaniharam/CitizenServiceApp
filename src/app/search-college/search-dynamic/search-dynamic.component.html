@@ -105,6 +105,10 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>College GPA</th>
         <td mat-cell *matCellDef="let element">{{element.collegeGPA}}</td>
       </ng-container>
+      <ng-container matColumnDef="collegeStanding">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>College Standing</th>
+        <td mat-cell *matCellDef="let element">{{element.collegeStanding}}</td>
+      </ng-container>
   
   
 
@@ -257,6 +261,10 @@
     <ng-container matColumnDef="collegeGPA">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>College GPA</th>
       <td mat-cell *matCellDef="let element">{{element.collegeGPA}}</td>
+    </ng-container>
+    <ng-container matColumnDef="collegeStanding">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>College Standing</th>
+      <td mat-cell *matCellDef="let element">{{element.collegeStanding}}</td>
     </ng-container>
 
 
