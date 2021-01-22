@@ -1,6 +1,7 @@
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
+    color: rgb(35, 206, 78);
 
   }
   /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -8,7 +9,7 @@
   .navbar a {
     float: left;
     font-size: 16px;
-    color: white;
+    color: rgb(29, 17, 97);
     text-align: center;
     padding: 14px 16px;
     /* text-decoration: none; */
@@ -17,11 +18,14 @@
   .dropdown-item{
     color:blue;
   }
-  
+
+  .navbar-nav{
+    color:rgb(210, 245, 226);
+  }
 
 
 
 
 .navbar a:hover {
-  background-color:purple;
+  background-color:rgb(189, 243, 39);
 }

@@ -1,0 +1,46 @@
+.mat-dialog-container{
+    height: 400px;
+    width: 800px;
+    border-radius: 10px;
+    background: rgb(46, 197, 197);
+    color: #2dbadd;
+  }
+  .cdk-overlay-pane{
+max-width: 80vw;
+  }
+  .cdk-visually-hidden.cdk-focus-trap-anchor{
+      max-height: 300px;
+  }
+  .navbar {
+      background-color: blue;
+    margin-bottom: 0;
+    border-radius: 0;
+    color: rgb(35, 206, 78);
+
+  }
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: rgb(1, 0, 3);
+    text-align: center;
+    padding: 14px 16px;
+    /* text-decoration: none; */
+  }
+
+  .dropdown-item{
+    color:rgb(59, 59, 226);
+  }
+
+  .navbar-nav{
+    color:rgb(35, 103, 230);
+  }
+
+
+
+
+.navbar a:hover {
+  background-color:rgb(14, 222, 236);
+}
+

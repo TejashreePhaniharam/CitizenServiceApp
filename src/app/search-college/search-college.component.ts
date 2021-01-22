@@ -78,7 +78,7 @@ export class SearchCollegeComponent implements OnInit {
     obj.action = action;
 
     const dialogRef = this.dialog.open(AddDailogComponent, {
-      width: '1000',
+      width: '5000',
       data:obj
       // data: { 
       //   categoryName: this.categoryName,collegeScores: this.collegeScores, collegeUrl: this.collegeUrl, collegeScholarships: this.collegeScholarships, countryName: this.countryName }

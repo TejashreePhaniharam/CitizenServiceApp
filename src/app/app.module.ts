@@ -25,6 +25,9 @@ import { AddDailogComponent } from './add-dailog/add-dailog.component';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { TrainingsComponent } from './trainings/trainings.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { AddOrganizationComponent } from './add-organization/add-organization.component';
+import { CreateSeniorprogramComponent } from './add-organization/create-seniorprogram/create-seniorprogram.component';
+import { CreateOrphanageComponent } from './add-organization/create-orphanage/create-orphanage.component';
 
 
 const routes: Routes = [
@@ -33,6 +36,9 @@ const routes: Routes = [
   { path: "searchByRatio/searchDynamic", component: SearchDynamicComponent },
   { path: "trainings", component: TrainingsComponent },
   { path: "jobs", component: JobsComponent },
+  { path: "jobs/addOrganization", component: AddOrganizationComponent},
+  { path: "addOrganization/createSeniorprogram", component: CreateSeniorprogramComponent},
+  { path: "addOrganization/createOrphanage", component: CreateOrphanageComponent}
 ];
 
 @NgModule({
@@ -44,7 +50,10 @@ const routes: Routes = [
     AddDailogComponent,
     DialogBoxComponent,
     TrainingsComponent,
-    JobsComponent
+    JobsComponent,
+    AddOrganizationComponent,
+    CreateSeniorprogramComponent,
+    CreateOrphanageComponent
   ],
   imports: [
     BrowserModule,
