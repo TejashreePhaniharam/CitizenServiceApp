@@ -9,11 +9,11 @@
   </mat-form-field> 
   
   <mat-form-field>
-    <input matInput placeholder="College Scores" [(ngModel)]="local_data.collegeScores">
+    <input matInput placeholder="Organization Name" [(ngModel)]="local_data.collegeScores">
   </mat-form-field>
   <mat-form-field *ngIf="action === 'Details' && local_data.collegeUrl">
 
-    <iframe width="800" height="700" [src]="sanitizer.bypassSecurityTrustResourceUrl(local_data.collegeUrl)"
+    <iframe width="400" height="300" [src]="sanitizer.bypassSecurityTrustResourceUrl(local_data.collegeUrl)"
         frameborder="0"
         allow="accelerometer; 400play; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
@@ -21,13 +21,13 @@
 
 <mat-form-field>
 
-    <input matInput placeholder="Scholarships Given" [(ngModel)]="local_data.collegeScholarships">
+    <input matInput [readonly]="!editable" placeholder="Scholarships Given" [(ngModel)]="local_data.collegeScholarships">
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Country Name" [(ngModel)]="local_data.countryName">
+    <input matInput [readonly]="!editable" placeholder="Country Name" [(ngModel)]="local_data.countryName">
   </mat-form-field>
   <mat-form-field *ngIf="action === 'Details'">
-    <input matInput   placeholder="Ratio" [(ngModel)]="local_data.internationalStudentsRatio">
+    <input matInput [readonly]="!editable" placeholder="Ratio" [(ngModel)]="local_data.internationalStudentsRatio">
   </mat-form-field>
   
 
@@ -36,7 +36,7 @@
   <h1 mat-dialog-title> <strong>{{action}}</strong></h1>
 <div mat-dialog-content>
   <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input placeholder="{{action}} of Category Name" matInput [(ngModel)]="local_data.categoryName">
+    <input placeholder="{{action}} of Category Name" matInput [readonly]="!editable" [(ngModel)]="local_data.categoryName">
   </mat-form-field>
   <ng-template #elseTemplate>
     Sure to delete <b>{{local_data._id}}</b>?

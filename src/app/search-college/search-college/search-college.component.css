@@ -9,6 +9,7 @@
       .demo-content.bg-alt
       {
            background: #abb1b8; 
+           max-width: 200px;
       }
       
     
