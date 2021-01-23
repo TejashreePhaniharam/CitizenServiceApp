@@ -28,6 +28,18 @@ import { JobsComponent } from './jobs/jobs.component';
 import { AddOrganizationComponent } from './add-organization/add-organization.component';
 import { CreateSeniorprogramComponent } from './add-organization/create-seniorprogram/create-seniorprogram.component';
 import { CreateOrphanageComponent } from './add-organization/create-orphanage/create-orphanage.component';
+import { CreateHandicappedComponent } from './add-organization/create-handicapped/create-handicapped.component';
+import { CreateDonationcenterComponent } from './add-organization/create-donationcenter/create-donationcenter.component';
+import { CreateRehabcenterComponent } from './add-organization/create-rehabcenter/create-rehabcenter.component';
+import { CreateFoodbankComponent } from './add-organization/create-foodbank/create-foodbank.component';
+import { CreateVoluntaryComponent } from './add-organization/create-voluntary/create-voluntary.component';
+import { DisplaySeniorprogramComponent } from './display-organization/display-seniorprogram/display-seniorprogram.component';
+import { DisplayOrphanageComponent } from './display-organization/display-orphanage/display-orphanage.component';
+import { DisplayHandicappedComponent } from './display-organization/display-handicapped/display-handicapped.component';
+import { DisplayVoluntaryComponent } from './display-organization/display-voluntary/display-voluntary.component';
+import { DisplayDonationcenterComponent } from './display-organization/display-donationcenter/display-donationcenter.component';
+import { DisplayRehabcenterComponent } from './display-organization/display-rehabcenter/display-rehabcenter.component';
+import { DisplayFoodbankComponent } from './display-organization/display-foodbank/display-foodbank.component';
 
 
 const routes: Routes = [
@@ -38,7 +50,18 @@ const routes: Routes = [
   { path: "jobs", component: JobsComponent },
   { path: "jobs/addOrganization", component: AddOrganizationComponent},
   { path: "addOrganization/createSeniorprogram", component: CreateSeniorprogramComponent},
-  { path: "addOrganization/createOrphanage", component: CreateOrphanageComponent}
+  { path: "addOrganization/createOrphanage", component: CreateOrphanageComponent},
+  { path: "addOrganization/createHandicapped", component: CreateHandicappedComponent},
+  { path: "addOrganization/createDonationcenter", component: CreateDonationcenterComponent},
+  { path: "addOrganization/createRehabcenter", component: CreateRehabcenterComponent},
+  { path: "addOrganization/createFoodbank", component: CreateFoodbankComponent},
+  { path: "addOrganization/createVoluntary", component: CreateVoluntaryComponent},
+  { path: "displayOrphanage", component: DisplayOrphanageComponent},
+  { path: "displayHandicapped", component: DisplayHandicappedComponent},
+  { path: "displayRehabcenter", component: DisplayRehabcenterComponent},
+  { path: "displayDonationcenter", component: DisplayDonationcenterComponent},
+  { path: "displayFoodbank", component: DisplayFoodbankComponent},
+  { path: "displayVoluntary", component: DisplayVoluntaryComponent}
 ];
 
 @NgModule({
@@ -53,7 +76,19 @@ const routes: Routes = [
     JobsComponent,
     AddOrganizationComponent,
     CreateSeniorprogramComponent,
-    CreateOrphanageComponent
+    CreateOrphanageComponent,
+    CreateHandicappedComponent,
+    CreateDonationcenterComponent,
+    CreateRehabcenterComponent,
+    CreateFoodbankComponent,
+    CreateVoluntaryComponent,
+    DisplaySeniorprogramComponent,
+    DisplayOrphanageComponent,
+    DisplayHandicappedComponent,
+    DisplayVoluntaryComponent,
+    DisplayDonationcenterComponent,
+    DisplayRehabcenterComponent,
+    DisplayFoodbankComponent
   ],
   imports: [
     BrowserModule,
