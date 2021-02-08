@@ -4,11 +4,29 @@
     <br>
     <h1>Select Your Category</h1>
     <hr>
+    <div class="container-fluid">
+        <h2> Select Your Organization Category</h2>
+        <mat-form-field appearance="fill">
+         <mat-label>Category</mat-label>
+         <select matNativeControl id="mySelectId">
+           <option value="Senior Program">Senior Program</option>
+           <option value="Orphanage">Orphanage</option>
+           <option value="Handicapped">Handicapped</option>
+           <option value="Volunteers">Volunteers</option>
+           <option value="Donation center">Donation center</option>
+           <option value="Food Bank">Food Bank</option>
+           <option value="Rehab Center">Rehab Center</option>
+         </select>
+       </mat-form-field>
+     </div>
+     <hr>
     <div class=" container-fluid">
 
         <div class="navbar navbar-expand-sm bg-primary navbar-dark">
         <div class="container-fluid">
           <div class="navbar-header">
+
+            
       
             <ul class="navbar-nav" >
        
@@ -25,27 +43,27 @@
       
             <li class="nav-item active" >
       
-              <a routerLink="/jobs" routerLinkActive="active">Handicapped</a>
+              <a routerLink="/addOrganization/createHandicapped" routerLinkActive="active">Handicapped</a>
           </li> 
       
           <li class="nav-item active" >
       
-            <a routerLink="/jobs" routerLinkActive="active">Volunteers</a>
+            <a routerLink="/addOrganization/createVoluntary" routerLinkActive="active">Volunteers</a>
         </li> 
       
         <li class="nav-item active" >
       
-          <a routerLink="/searchcolleges" routerLinkActive="active">Donation Center</a>
+          <a routerLink="/addOrganization/createDonationcenter" routerLinkActive="active">Donation Center</a>
       </li> 
       
       <li class="nav-item active" >
       
-        <a routerLink="/searchcolleges" routerLinkActive="active">Food Bank</a>
+        <a routerLink="/addOrganization/createFoodbank" routerLinkActive="active">Food Bank</a>
       </li> 
       
       <li class="nav-item active" >
       
-        <a routerLink="/searchcolleges" routerLinkActive="active">Rehab Center</a>
+        <a routerLink="/addOrganization/createRehabcenter" routerLinkActive="active">Rehab Center</a>
       </li> 
              
               
