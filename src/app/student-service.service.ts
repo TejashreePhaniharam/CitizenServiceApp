@@ -1,4 +1,3 @@
-//import { Injectable } from '@angular/core';
 import {Injectable, Input} from '@angular/core';
 
 import {Http, Response} from '@angular/http';
@@ -7,13 +6,18 @@ import {Observable, throwError, of} from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Headers, RequestOptions } from '@angular/http';
 import { Colleges } from './search-college/Colleges';
+import { Handicapped } from './display-organization/display-handicapped/Handicapped';
 
 @Injectable()
 export class StudentServiceService {
   private collegesUrl = "http://localhost:8081/colleges";
+  private handicappedUrl = "http://localhost:8081/handicapped";
   private addCollegeUrl = "http://localhost:8081/";
   private updateCollegeUrl = "http://localhost:8081/";
   private deleteCollegeUrl = "http://localhost:8081/";
+  private addHandicappedUrl = "http://localhost:8081/";
+  private updateHandicappedUrl = "http://localhost:8081/";
+  private deleteHandicappedUrl = "http://localhost:8081/";
   private countryNameCollegeScoresUrl = "http://localhost:8081/colleges/scores";
   private countryNameCollegeScholarshipsUrl = "http://localhost:8081/colleges/funding";
   private countryNameCollegeStandingUrl = "http://localhost:8081/colleges/standing";
@@ -22,6 +26,7 @@ export class StudentServiceService {
   private countryNameCollegeGPAUrl = "http://localhost:8081/colleges/gpa";
   private countryNameresorceTypeUrl = "http://localhost:8081/colleges/resources";
    colleges: Colleges[];
+   handicapped: Handicapped[];
   constructor(private _http:Http) {
   
   }
@@ -35,6 +40,16 @@ export class StudentServiceService {
                      );
     
     }
+    public getHandicapped(): Observable<Handicapped[]>{
+
+      return this._http.get(this.handicappedUrl)
+                       .pipe(
+                         map(handicapps => this.handicapped = handicapps.json()
+                       ),
+                       catchError(this.handleError('getCertifications',[]))
+                       );
+      
+      }
 
     public createCollege(college:Colleges): Observable<Colleges> {
       let headers = new Headers({ 'Content-Type': 'application/json' });
@@ -44,6 +59,16 @@ export class StudentServiceService {
                         map(collegeData => this.colleges = collegeData.json()
                       ),                     
                       catchError(this.handleError('colleges',[]))
+                      );
+    }
+    public createHandicapped(handicapps:Handicapped): Observable<Handicapped> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+            let options = new RequestOptions({ headers: headers });
+            return this._http.post(this.addHandicappedUrl, handicapps, options)
+                        .pipe(
+                        map(handicappedData => this.handicapped = handicappedData.json()
+                      ),                     
+                      catchError(this.handleError('handicapped',[]))
                       );
     }
 
@@ -56,7 +81,18 @@ export class StudentServiceService {
                       ),                     
                       catchError(this.handleError('colleges',[]))
                       );
+
     }
+    public updateHandicapped(handicapps:Handicapped): Observable<Handicapped> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+            let options = new RequestOptions({ headers: headers });
+            return this._http.put(this.updateHandicappedUrl, handicapps, options)
+                        .pipe(
+                        map(handicappedData => this.handicapped = handicappedData.json()
+                      ),                     
+                      catchError(this.handleError('handicapped',[]))
+                      );
+                        }
     public getByCountryNameCollegeScores(countryName:string, collegeScores:Number): Observable<Colleges[]>{
 
       var collgescores = this.countryNameCollegeScoresUrl + "/"+ countryName + "/" + collegeScores;
@@ -161,4 +197,3 @@ export class StudentServiceService {
     }
 
   }
-
