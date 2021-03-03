@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchRatioComponent } from './search-ratio.component';
+import { CreateFoodbankComponent } from './create-foodbank.component';
 
-describe('SearchRatioComponent', () => {
-  let component: SearchRatioComponent;
-  let fixture: ComponentFixture<SearchRatioComponent>;
+describe('CreateFoodbankComponent', () => {
+  let component: CreateFoodbankComponent;
+  let fixture: ComponentFixture<CreateFoodbankComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchRatioComponent ]
+      declarations: [ CreateFoodbankComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchRatioComponent);
+    fixture = TestBed.createComponent(CreateFoodbankComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

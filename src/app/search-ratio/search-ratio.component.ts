@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Colleges } from '../search-college/Colleges';
 import { StudentServiceService } from '../student-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
+import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-search-ratio',
@@ -12,13 +15,20 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchRatioComponent implements OnInit {
   colleges1:Colleges[];
   colleges:Colleges[];
-   constructor(private route:ActivatedRoute,
+  DataOne1=[];
+  collegeVideos: Colleges[];
+  countryName: string;
+
+   constructor(public sanitizer:DomSanitizer,private route:ActivatedRoute,
      private studentservice:StudentServiceService){
    }
+   
    ngOnInit(): void {
-    
+     this.getByCountryNameResourceType("india","video");
    }
- 
+   loopForUrls(){
+    
+  }
  addColleges()
  {
    if (this.colleges==null){
@@ -30,5 +40,15 @@ export class SearchRatioComponent implements OnInit {
    else{
      this.colleges1=this.colleges1;
    }
+  }
+ getByCountryNameResourceType(countryName:string,resourceType:string):void{
+
+  if (!Array.isArray(this.collegeVideos)){
+    console.log("came here"+countryName);
+   this.studentservice.getByCountryNameResourceType(countryName,resourceType)
+   .subscribe((collegedata)=>this.collegeVideos = collegedata);
+  }
+     
  }
 }
+

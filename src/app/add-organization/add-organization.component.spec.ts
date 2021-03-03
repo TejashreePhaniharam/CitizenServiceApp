@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchDynamicComponent } from './search-dynamic.component';
+import { AddOrganizationComponent } from './add-organization.component';
 
-describe('SearchDynamicComponent', () => {
-  let component: SearchDynamicComponent;
-  let fixture: ComponentFixture<SearchDynamicComponent>;
+describe('AddOrganizationComponent', () => {
+  let component: AddOrganizationComponent;
+  let fixture: ComponentFixture<AddOrganizationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchDynamicComponent ]
+      declarations: [ AddOrganizationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchDynamicComponent);
+    fixture = TestBed.createComponent(AddOrganizationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
