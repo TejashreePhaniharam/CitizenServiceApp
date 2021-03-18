@@ -63,7 +63,7 @@ constructor(private route:ActivatedRoute,
     obj.action = action;
 
     const dialogRef = this.dialog.open(AddDailogComponent, {
-      width: '1000',
+      width: '3000',
       data:obj
       // data: { 
       //   categoryName: this.categoryName,collegeScores: this.collegeScores, collegeUrl: this.collegeUrl, collegeScholarships: this.collegeScholarships, countryName: this.countryName }
