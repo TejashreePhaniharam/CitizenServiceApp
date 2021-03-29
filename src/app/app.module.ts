@@ -41,6 +41,7 @@ import { DisplayDonationcenterComponent } from './display-organization/display-d
 import { DisplayRehabcenterComponent } from './display-organization/display-rehabcenter/display-rehabcenter.component';
 import { DisplayFoodbankComponent } from './display-organization/display-foodbank/display-foodbank.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ManageOrganizationComponent } from './manage-organization/manage-organization.component';
 
 
 const routes: Routes = [
@@ -57,13 +58,16 @@ const routes: Routes = [
   { path: "addOrganization/createRehabcenter", component: CreateRehabcenterComponent},
   { path: "addOrganization/createFoodbank", component: CreateFoodbankComponent},
   { path: "addOrganization/createVoluntary", component: CreateVoluntaryComponent},
+  { path: "displaySeniorprogram", component: DisplaySeniorprogramComponent},
   { path: "displayOrphanage", component: DisplayOrphanageComponent},
   { path: "displayHandicapped", component: DisplayHandicappedComponent},
   { path: "displayRehabcenter", component: DisplayRehabcenterComponent},
   { path: "displayDonationcenter", component: DisplayDonationcenterComponent},
   { path: "displayFoodbank", component: DisplayFoodbankComponent},
   { path: "displayVoluntary", component: DisplayVoluntaryComponent},
-  { path : "homePage", component: HomePageComponent}
+  { path : "homePage", component: HomePageComponent},
+  { path : "homePage/manageOrganization", component: ManageOrganizationComponent},
+
 ];
 
 @NgModule({
@@ -91,7 +95,8 @@ const routes: Routes = [
     DisplayDonationcenterComponent,
     DisplayRehabcenterComponent,
     DisplayFoodbankComponent,
-    HomePageComponent
+    HomePageComponent,
+    ManageOrganizationComponent
   ],
   imports: [
     BrowserModule,
